@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Please don't try to actually download VRAM, it's just a joke! 🤖
+# Beep boop... downloading more RAM for robots...
+
+Sitemap: https://downloadmorevram.com/sitemap.xml
