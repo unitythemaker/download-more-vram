@@ -23,27 +23,32 @@
 <script setup lang="ts">
 const { initialize } = useGtag()
 
-// Initialize consent state from localStorage
-const savedConsent = process.client ? localStorage.getItem('analytics-consent') : null
-const showConsent = ref(savedConsent === null)
+// Start hidden by default
+const showConsent = ref(false)
 
-// Initialize analytics if consent was previously given
-if (savedConsent === 'true' && process.client) {
-  initialize()
-}
+// Check consent state after mount
+onMounted(() => {
+  const savedConsent = localStorage.getItem('analytics-consent')
+  
+  // Only show if no decision was made yet
+  if (savedConsent === null) {
+    showConsent.value = true
+  }
+  
+  // Initialize analytics if previously accepted
+  if (savedConsent === 'true') {
+    initialize()
+  }
+})
 
 function accept() {
   showConsent.value = false
-  if (process.client) {
-    localStorage.setItem('analytics-consent', 'true')
-    initialize()
-  }
+  localStorage.setItem('analytics-consent', 'true')
+  initialize()
 }
 
 function decline() {
   showConsent.value = false
-  if (process.client) {
-    localStorage.setItem('analytics-consent', 'false')
-  }
+  localStorage.setItem('analytics-consent', 'false')
 }
 </script>
