@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!hasConsent" class="fixed bottom-4 right-4 p-4 bg-gray-900/95 backdrop-blur rounded-lg shadow-lg max-w-sm border border-gray-800 z-50">
+  <div v-if="showConsent" class="fixed bottom-4 right-4 p-4 bg-gray-900/95 backdrop-blur rounded-lg shadow-lg max-w-sm border border-gray-800 z-50">
     <p class="text-sm text-gray-300 mb-4">
       We use cookies to analyze traffic and improve your experience. Your privacy matters.
     </p>
@@ -22,25 +22,28 @@
 
 <script setup lang="ts">
 const { initialize } = useGtag()
-const hasConsent = ref(false)
 
-// Check if consent was previously given
-onMounted(() => {
-  const savedConsent = localStorage.getItem('analytics-consent')
-  if (savedConsent === 'true') {
-    hasConsent.value = true
-    initialize()
-  }
-})
+// Initialize consent state from localStorage
+const savedConsent = process.client ? localStorage.getItem('analytics-consent') : null
+const showConsent = ref(savedConsent === null)
 
-function accept() {
-  hasConsent.value = true
-  localStorage.setItem('analytics-consent', 'true')
+// Initialize analytics if consent was previously given
+if (savedConsent === 'true' && process.client) {
   initialize()
 }
 
+function accept() {
+  showConsent.value = false
+  if (process.client) {
+    localStorage.setItem('analytics-consent', 'true')
+    initialize()
+  }
+}
+
 function decline() {
-  hasConsent.value = true
-  localStorage.setItem('analytics-consent', 'false')
+  showConsent.value = false
+  if (process.client) {
+    localStorage.setItem('analytics-consent', 'false')
+  }
 }
 </script>
