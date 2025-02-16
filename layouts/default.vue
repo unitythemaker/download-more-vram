@@ -74,6 +74,8 @@
         </div>
       </div>
     </footer>
+
+    <CookieConsent />
   </div>
 </template>
 
