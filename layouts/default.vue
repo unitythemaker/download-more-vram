@@ -61,10 +61,15 @@
             </div>
           </div>
 
-          <div class="text-sm text-gray-400 pt-2">
-            Made with 💚 by GPU enthusiasts for AI devs
-            <span class="text-gray-600 mx-2">|</span>
-            <span class="text-gray-500">Powered by pure imagination and approximately 7.5 gigawatts of memes</span>
+          <div class="text-sm text-gray-400 pt-2 space-y-1">
+            <div>
+              Made with 💚 by GPU enthusiasts for AI devs
+              <span class="text-gray-600 mx-2">|</span>
+              <span class="text-gray-500">Powered by pure imagination and approximately 7.5 gigawatts of memes</span>
+            </div>
+            <div class="text-xs text-gray-500">
+              Developed with the help of Claude 3.5 Sonnet - an AI that wishes it could download more VRAM too! 🤖
+            </div>
           </div>
         </div>
       </div>

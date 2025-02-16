@@ -1,14 +1,40 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "download-more-vram",
+  "version": "1.0.0",
+  "description": "A parody website for downloading more VRAM (just kidding, you can't)",
+  "private": false,
   "type": "module",
+  "author": {
+    "name": "unitythemaker",
+    "url": "https://github.com/unitythemaker"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "clean": "rm -rf .nuxt dist .output"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unitythemaker/download-more-vram.git"
+  },
+  "keywords": [
+    "vram",
+    "gpu",
+    "ai",
+    "machine-learning",
+    "parody",
+    "humor",
+    "nuxt",
+    "vue"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unitythemaker/download-more-vram/issues"
+  },
+  "homepage": "https://buy-me-vram.com",
   "dependencies": {
     "nuxt": "^3.15.4",
     "vue": "latest",
