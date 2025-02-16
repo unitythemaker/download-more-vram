@@ -138,20 +138,20 @@ let factTimeout = null
 // Fun facts about VRAM and GPUs
 const funFacts = [
   "Warning: Your GPU is feeling lonely. Consider downloading a friend for it! 💝",
-  "If you stacked all the world's VRAM chips, they would reach the moon! (This fact is definitely not made up, trust us)",
+  "Mr. Llama says: 'You can never have too much VRAM!' 🦙",
   "Side effect warning: May cause your PC to believe it's a supercomputer 🦸‍♂️",
-  "Some say GPUs dream of electric sheep when idle. Our research team is still investigating this claim...",
-  "RGB lighting increases VRAM download speed by exactly 420%. Scientists can't explain why! 🌈",
+  "Some say Mr. Llama dreams of infinite VRAM while idle... 🦙✨",
+  "RGB lighting increases VRAM download speed by exactly 420%. Mr. Llama confirmed! 🌈",
   "A potato PC successfully downloaded 64GB VRAM and now runs Crysis at 8K. True story! 🥔",
-  "Fun fact: Your GPU is actually running on hopes, dreams, and approximately 7.5 gigawatts of pure imagination ✨",
+  "Fun fact: Mr. Llama uses 140GB just to say hello! That's why he loves this service 🦙",
   "Warning: Do not mix with downloaded RAM - may create a black hole in your downloads folder 🕳️",
   "Cloud-resistant memory: Works even when it's sunny! ☀️",
-  "Quantum-entangled cache: It's both fast and slow until you measure it 🔄"
+  "Mr. Llama's quantum-entangled cache: It's both fast and slow until you measure it 🔄"
 ]
 
 // Boost actions
 const boostActions = ref([
-  { emoji: '🌈', name: 'RGB Power', used: false },
+  { emoji: '🦙', name: 'Llama Power', used: false },
   { emoji: '🧠', name: 'Digital Caffeine', used: false },
   { emoji: '🔮', name: 'Quantum Boost', used: false }
 ])
@@ -161,18 +161,19 @@ const addTerminalLog = () => {
   const messages = [
     'Teaching your GPU to dream bigger...',
     'Converting caffeine into VRAM...',
-    'Asking ChatGPT to imagine more memory...',
+    'Mr. Llama is reviewing your download...',
     'Convincing electrons to multiply...',
     'Downloading more download speed...',
-    'Reticulating RGB splines...',
+    'Mr. Llama is optimizing memory paths...',
     'Asking NVIDIA for forgiveness...',
     'Training memory cells to believe...',
-    'Overclocking your imagination...',
+    'Mr. Llama says: More VRAM incoming!',
     'Defragmenting hopes and dreams...',
     'Quantum tunneling through firewalls...',
-    'Patching reality.dll...',
+    'Consulting with Mr. Llama...',
     'Increasing GPU self-esteem...',
-    'Spawning more dedicating wam...',
+    'Mr. Llama approved your request! 🦙',
+    'Borrowing VRAM from parallel universes...',
     'Deleting System32 (just kidding)...'
   ]
   
@@ -191,7 +192,6 @@ const addTerminalLog = () => {
     color: colors[Math.floor(Math.random() * colors.length)]
   })
 
-  // Keep only last 8 logs
   if (terminalLogs.value.length > 8) {
     terminalLogs.value.shift()
   }
@@ -209,10 +209,10 @@ const showRandomFact = () => {
 }
 
 const boostMessages = {
-  'RGB Power': [
-    'Engaging gaming chair power boost! 🎮',
-    'RGB radiation levels: Over 9000! 🌈',
-    'Colorizing memory pathways... 🎨'
+  'Llama Power': [
+    'Mr. Llama is supercharging your download! 🦙',
+    'Llama magic activated! 🦙✨',
+    'Engaging Llama turbo boost... 🦙🚀'
   ],
   'Digital Caffeine': [
     'Injecting espresso.dll into GPU... ☕',
@@ -234,7 +234,6 @@ const triggerBoost = (action) => {
   addTerminalLog()
   showRandomFact()
   
-  // Reset status after 2 seconds
   setTimeout(() => {
     downloadStatus.value = status.value
   }, 2000)
